@@ -1,0 +1,55 @@
+C51 COMPILER V9.60.7.0   DOWN                                                              03/22/2026 13:03:39 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE DOWN
+OBJECT MODULE PLACED IN .\Objects\down.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE down.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\down
+                    -.lst) TABS(2) OBJECT(.\Objects\down.obj)
+
+line level    source
+
+   1          #include<reg52.h>
+   2          #define LED P2
+   3          char value=15;
+   4          void delay(void);
+   5          void main(void){
+   6   1        LED=0xFF;
+   7   1        while(1){
+   8   2          value=(value-1)&0x0F;
+   9   2          LED=~value;
+  10   2          delay();
+  11   2          
+  12   2        
+  13   2        }
+  14   1      
+  15   1      }
+  16          void delay(void){
+  17   1        int i;
+  18   1        for(i=0;i<10;i++){
+  19   2          TMOD=0x10;
+  20   2          TH1=0x70;
+  21   2          TL1=0xCB;
+  22   2          TR1=1;
+  23   2          while(TF1==0);
+  24   2            TR1=0;
+  25   2            TF1=0;
+  26   2          
+  27   2          
+  28   2        
+  29   2        }
+  30   1      
+  31   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     51    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      1    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

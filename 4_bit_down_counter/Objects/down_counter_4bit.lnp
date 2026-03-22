@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\down.obj" 
+TO ".\Objects\down_counter_4bit" 
+PRINT(".\Listings\down_counter_4bit.m51") RAMSIZE(256) 
