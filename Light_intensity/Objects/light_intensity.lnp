@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\intensity_light.obj" 
+TO ".\Objects\light_intensity" 
+PRINT(".\Listings\light_intensity.m51") RAMSIZE(256) 
