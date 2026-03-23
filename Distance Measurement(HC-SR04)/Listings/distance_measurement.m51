@@ -1,0 +1,163 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    03/23/2026  01:03:55  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\distance.obj TO .\Objects\distance_measurement PRINT (.\Lis
+>> tings\distance_measurement.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\STARTUP.obj (?C_STARTUP)
+  .\Objects\distance.obj (DISTANCE)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?UIDIV)
+
+
+LINK MAP OF MODULE:  .\Objects\distance_measurement (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0055H     UNIT         ?C?LIB_CODE
+            CODE    0855H     004CH     UNIT         ?PR?MAIN?DISTANCE
+            CODE    08A1H     000FH     UNIT         ?PR?DELAY?DISTANCE
+            CODE    08B0H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\distance_measurement (?C_STARTUP)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?DISTANCE
+
+?PR?MAIN?DISTANCE
+  +--> ?PR?DELAY?DISTANCE
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\distance_measurement (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:08B0H         SEGMENT       ?C_C51STARTUP
+  I:0008H         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  03/23/2026  01:03:55  PAGE 2
+
+
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:08B3H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:08B0H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:08B0H         LINE#         133
+  C:08B2H         LINE#         134
+  C:08B3H         LINE#         135
+  C:08B4H         LINE#         136
+  C:08B6H         LINE#         185
+  C:08B9H         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        DISTANCE
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  C:08A1H         PUBLIC        delay
+  D:00B8H         PUBLIC        IP
+  B:00A0H.7       PUBLIC        echo
+  C:0855H         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  B:00A0H.0       PUBLIC        led
+  B:00A0H.6       PUBLIC        trig
+  D:008CH         PUBLIC        TH0
+  D:008AH         PUBLIC        TL0
+  B:0088H.4       PUBLIC        TR0
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          DELAY
+  -------         DO            
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:08A1H         LINE#         5
+  C:08A1H         LINE#         7
+  C:08AFH         LINE#         9
+  -------         ENDPROC       DELAY
+  -------         PROC          MAIN
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  03/23/2026  01:03:55  PAGE 3
+
+
+  -------         DO            
+  D:0002H         SYMBOL        time
+  D:0004H         SYMBOL        distance
+  -------         ENDDO         
+  C:0855H         LINE#         11
+  C:0855H         LINE#         12
+  C:0858H         LINE#         13
+  C:085AH         LINE#         14
+  C:085AH         LINE#         15
+  C:085CH         LINE#         16
+  C:085FH         LINE#         17
+  C:0861H         LINE#         18
+  C:0864H         LINE#         19
+  C:0867H         LINE#         20
+  C:0869H         LINE#         21
+  C:086BH         LINE#         22
+  C:086EH         LINE#         23
+  C:0870H         LINE#         24
+  C:0885H         LINE#         25
+  C:0890H         LINE#         26
+  C:0899H         LINE#         27
+  C:089BH         LINE#         29
+  C:089DH         LINE#         30
+  C:089DH         LINE#         31
+  C:089FH         LINE#         33
+  C:089FH         LINE#         36
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        DISTANCE
+
+  -------         MODULE        ?C?UIDIV
+  C:0800H         PUBLIC        ?C?UIDIV
+  -------         ENDMOD        ?C?UIDIV
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 006AH BYTE ( 5%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=191
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

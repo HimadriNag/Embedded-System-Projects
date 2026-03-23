@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\distance.obj" 
+TO ".\Objects\distance_measurement" 
+PRINT(".\Listings\distance_measurement.m51") RAMSIZE(256) 
